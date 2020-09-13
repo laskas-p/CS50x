@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post">
+        <div class="form-group">
+            <input autocomplete="off" id="symb" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text">
+        </div>
+        <button class="btn btn-primary" id="sbm_btn" type="submit" disabled>Quote</button>
+    </form>
+    <script>
+        document.querySelector('#symb').onkeyup = function() {
+            if (document.querySelector('#symb').value === '')  {
+                document.querySelector('#sbm_btn').disabled = true;
+            } else {
+                document.querySelector('#sbm_btn').disabled = false;
+            }
+        };
+    </script>
+{% endblock %}

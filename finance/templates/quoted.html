@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    A share of {{ qtn["name"] }} ({{ qtn["symbol"] }}) costs ${{ qtn["price"] }}
+{% endblock %}

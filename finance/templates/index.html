@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table align="center">
+    <tr>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Shares</th>
+        <th>Price</th>
+        <th>TOTAL</th>
+    </tr>
+    {% for share in myshares %}
+        <tr>
+            <td>{{ share['symbol'] }}</td>
+            <td>{{ share['name'] }}</td>
+            <td>{{ share['shares'] }}</td>
+            <td>{{ usd(share['price']) }}</td>
+            <td>{{ usd(share['total']) }}</td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <td>CASH</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{ usercash }}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><h4>{{ totalcash }}</h4></td>
+    </tr>
+    </table>
+{% endblock %}

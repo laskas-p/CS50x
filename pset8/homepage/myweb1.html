@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- links to import css files from the internet and local -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Javascript</title>
+    </head>
+    <body>
+        <h1 class="centeralign" style="color: red">Javascript</h1>
+        <h2 style="text-align: center;">This is my javascript demo page</h2>
+
+        <hr>
+        <!-- creates a horizontal menu  -->
+        <ul class="nav nav-pills nav-fill marginleft marginright">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Homepage</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="myweb1.html">Javascripts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="myweb2.html">Tables and Divs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="myweb3.html">Hello World</a>
+            </li>
+        </ul>
+        <hr>
+        <h3 class="centeralign" id="mytitle">Please enter your name</h3>
+        <!-- form to input data  -->
+        <form id="initialform" class="centeralign" onsubmit="getname(); return false;">
+            <input type="text" id="name">
+            <input type="submit">
+        </form>
+
+
+
+        <h1 id="div1" class="visibilityhidden centeralign" style="color: black">
+            Hello!
+        </h1>
+        <hr id="hr1" class="visibilityhidden">
+
+        <select id="div2" class="visibilityhidden custom-select custom-select-lg mb-3">
+            <option selected>Please Select one of the following colors</option>
+            <option value="red" class="centeralign">RED</option>
+            <option value="blue">BLUE</option>
+            <option value="green">GREEN</option>
+            <option value="yellow">YELLOW</option>
+        </select>
+
+
+
+
+
+
+
+
+        <script>
+
+            // javascript to check if the user have entered a name
+            function getname()
+            {
+                let name = document.querySelector('#name').value;
+
+                // if not activate an alarm
+                if (name ==='')
+                {
+                    alert("Please enter your name")
+                }
+                else
+                {
+                    // if yes start a series of commands by selecting an HTML object by its id and changing a value
+                    document.querySelector('#initialform').style.visibility = 'hidden';
+                    document.querySelector('#mytitle').style.visibility = 'hidden';
+
+                    document.querySelector('#div1').style.visibility = 'visible';
+                    document.querySelector('#hr1').style.visibility = 'visible';
+
+                    // with .innerHTML command we can change the complete HTML code included in this object
+                    document.querySelector('#div1').innerHTML = 'Hello, ' + name +'!';
+                    document.querySelector('#div2').style.visibility = 'visible';
+                }
+            }
+
+            // function to create blinking text
+            function blink()
+            {
+                let blinking = document.querySelector('#mytitle');
+                let time_title = document.querySelector('#div1');
+
+                // store time in variables in the proper format
+                if (new Date().getHours() < 10)
+                {
+                    hours = '0' + new Date().getHours();
+                }
+                else
+                {
+                    hours = new Date().getHours();
+                }
+
+                if (new Date().getMinutes() < 10)
+                {
+                    minutes = '0' + new Date().getMinutes();
+                }
+                else
+                {
+                    minutes = new Date().getMinutes();
+                }
+
+                if (new Date().getSeconds() < 10)
+                {
+                    seconds = '0' + new Date().getSeconds();
+                }
+                else
+                {
+                    seconds = new Date().getSeconds();
+                }
+
+                // actual code to trigger blinking
+                if (blinking.style.visibility === 'hidden')
+                {
+                    blinking.style.visibility = 'visible';
+                    time_title.style.visibility = 'visible';
+                    document.querySelector('#div1').innerHTML = 'current time is ' + hours + ' : ' + minutes + ' : ' + seconds;
+                }
+                else
+                {
+                    blinking.style.visibility='hidden';
+                    time_title.style.visibility = 'hidden';
+                }
+            }
+
+            // function to do somthing on change event for the dropdown list
+            document.querySelector('select').onchange = function() {
+                let name1 = document.querySelector('#name').value;
+                document.querySelector('#mytitle').style.color = this.value;
+                document.querySelector('select').style.visibility = 'hidden';
+                document.querySelector('#div1').style.visibility = 'hidden';
+                document.querySelector('#hr1').style.visibility = 'hidden';
+                document.querySelector('#mytitle').innerHTML = name1 + ', Your color is: ' + this.value;
+                window.setInterval(blink, 1000);
+            }
+        </script>
+        <!-- footer for the webpage as described in the styles.css folder -->
+        <p class="footer">Pavlos Laskas June 2020</p>
+    </body>
+</html>

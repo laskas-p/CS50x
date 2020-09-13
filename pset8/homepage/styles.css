@@ -1,0 +1,73 @@
+h1
+{
+    color: blue;
+}
+
+.footer {
+    background-color: #F1F1F1;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.centeralign
+{
+    text-align: center;
+}
+
+.marginleft {
+    display: flex;
+    margin-left: 20px;
+}
+
+.marginright {
+    display: flex;
+    margin-right: 20px;
+}
+
+.column {
+    flex: 40%;
+}
+
+.column2 {
+    flex: 5%;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.centerimage {
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.visibilityhidden {
+    visibility: hidden;
+}
+
+.visibilityvisible {
+    visibility: visible;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+}
+
+th {
+    border: 1px solid black;
+}

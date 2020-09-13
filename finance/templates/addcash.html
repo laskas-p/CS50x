@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Cash
+{% endblock %}
+
+{% block main %}
+    <form action="/addcash" method="post">
+        <div class="form-group">
+            <input autocomplete="off" id="cash" autofocus class="form-control" name="cash" placeholder="Cash" type="number" min="1">
+        </div>
+        <button class="btn btn-primary" id="sbm_btn" type="submit" disabled>Add Cash</button>
+    </form>
+    <script>
+        document.querySelector('#cash').onkeyup = function() {
+            if (document.querySelector('#cash').value === '')  {
+                document.querySelector('#sbm_btn').disabled = true;
+            } else {
+                document.querySelector('#sbm_btn').disabled = false;
+            }
+        };
+    </script>
+{% endblock %}

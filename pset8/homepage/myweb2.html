@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- links to import css files from the internet and local -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Tables and Divs</title>
+         <script src="myweb2.js"></script>
+    </head>
+    <body>
+        <h1 class="centeralign" style="color: green">Tables and Divs</h1>
+        <h2 style="text-align: center;">This is a tables and divs demo page</h2>
+
+        <hr>
+        <!-- creates a horizontal menu  -->
+        <ul class="nav nav-pills nav-fill marginleft marginright">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Homepage</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="myweb1.html">Javascripts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="myweb2.html">Tables and Divs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="myweb3.html">Hello World</a>
+            </li>
+        </ul>
+        <hr>
+         <!-- create a three column line as specified in the styles.css file  -->
+        <div class="row">
+            <div class="column">
+                <!-- first column -->
+                <form class="centeralign" onsubmit="setnumbers(); return false;">
+                    <p><h5>Insert a range of numbers</h5>
+                    <h5>to create a table with three columns</h5></p>
+                    <p><h5>Enter the first number</h5>
+                    <br><input type="number" id="first_num">
+                    <br><br><h5>Enter the last number</h5>
+                    <br><input type="number" id="last_num">
+                    <br><br><input type="submit"></p>
+                </form>
+            </div>
+            <div class="column2">
+            </div>
+            <div class="column rowright">
+                <!-- third column -->
+                <!-- create table -->
+                <table id="rightcol" style="margin-bottom: 15%">
+
+                </table>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- footer for the webpage as described in the styles.css folder -->
+        <p class="footer">Pavlos Laskas June 2020</p>
+    </body>
+</html>
